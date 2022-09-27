@@ -26,7 +26,6 @@
                     <div class="text-danger" th:if="${#fields.hasErrors('firstName')}">
                         <ol>
                             <li th:each="error : ${#fields.errors('firstName')}" th:text="${error}"></li>
-                        massages
                         </ol>
                     </div>
                 </div>
@@ -38,24 +37,38 @@
                     <div class="text-danger" th:if="${#fields.hasErrors('lastName')}">
                         <ol>
                             <li th:each="error : ${#fields.errors('lastName')}" th:text="${error}"></li>
-                            massages
                         </ol>
                     </div>
                 </div>
                 <div class="form-group col">
                     <label class="col-form-label" for="birthday">Birthday</label>
                     <input class="form-control" id="birthday" th:field="*{birthday}" type="date">
+                    <div class="text-danger" th:if="${#fields.hasErrors('birthday')}">
+                        <ol>
+                            <li th:each="error : ${#fields.errors('birthday')}" th:text="${error}"></li>
+                        </ol>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col">
                     <label class="col-form-label ui-state-error" for="email">Email</label>
                     <input class="form-control" id="email" placeholder="Email" th:field="*{email}" type="email">
+                    <div class="text-danger" th:if="${#fields.hasErrors('email')}">
+                        <ol>
+                            <li th:each="error : ${#fields.errors('email')}" th:text="${error}"></li>
+                        </ol>
+                    </div>
                 </div>
                 <div class="form-group col">
                     <label class="col-form-label" for="password">Password</label>
                     <input class="form-control" id="password" placeholder="Password" th:field="*{password}"
                            type="password">
+                    <div class="text-danger" th:if="${#fields.hasErrors('password')}">
+                        <ol>
+                            <li th:each="error : ${#fields.errors('password')}" th:text="${error}"></li>
+                        </ol>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -63,6 +76,12 @@
                     <label class="col-form-label" for="address">Address</label>
                     <input class="form-control" id="address" placeholder="1234 Main St" th:field="*{address}"
                            type="text">
+                    <div class="text-danger" th:if="${#fields.hasErrors('address')}">
+                        <ol>
+                            <li th:each="error : ${#fields.errors('address')}" th:text="${error}"></li>
+                            massages
+                        </ol>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -70,12 +89,24 @@
                     <label class="col-form-label" for="address2">Address 2</label>
                     <input class="form-control" id="address2" placeholder="Apartment, studio or floor" th:field="*{address2}"
                            type="text">
+                    <div class="text-danger" th:if="${#fields.hasErrors('address2')}">
+                        <ol>
+                            <li th:each="error : ${#fields.errors('address2')}" th:text="${error}"></li>
+                            massages
+                        </ol>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-6">
                     <label class="col-form-label" for="city">City</label>
                     <input class="form-control" id="city" th:field="*{city}" type="text">
+                    <div class="text-danger" th:if="${#fields.hasErrors('city')}">
+                        <ol>
+                            <li th:each="error : ${#fields.errors('city')}" th:text="${error}"></li>
+                            massages
+                        </ol>
+                    </div>
                 </div>
                 <div class="form-group col-4">
                     <label class="col-form-label" for="state">State</label>
@@ -87,6 +118,12 @@
                 <div class="form-group col-2">
                     <label class="col-form-label" for="zip">Zip</label>
                     <input class="form-control" id="zip" th:field="*{zip}" type="text">
+                    <div class="text-danger" th:if="${#fields.hasErrors('zip')}">
+                        <ol>
+                            <li th:each="error : ${#fields.errors('zip')}" th:text="${error}"></li>
+                            massages
+                        </ol>
+                    </div>
                 </div>
             </div>
             <div class="row">
