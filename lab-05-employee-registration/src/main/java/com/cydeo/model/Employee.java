@@ -17,14 +17,15 @@ public class Employee {
 
     @NotBlank
     @Size(max = 12, min = 2)
-    @Pattern(regexp = "[a-zA-Z]")
+    @Pattern(regexp = "[a-zA-Z]*")
     private String firstName;
     @NotBlank
     @Size(max = 12, min = 2)
-    @Pattern(regexp = "[a-zA-Z]")
+    @Pattern(regexp = "[a-zA-Z]*")
     private String lastName;
-    @Pattern(regexp = "[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\\\.[a-zA-Z0-9-.]+")
+    @Pattern(regexp = "^(.+)@(\\S+)$")
     private String email;
+    @Size(min = 8)
     @Pattern(regexp = "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{4,}")
     private String password;
     @NotBlank
