@@ -4,8 +4,10 @@ import com.cydeo.spring05thymeleaf.model.Product;
 import com.cydeo.spring05thymeleaf.service.ProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.UUID;
 
 @Controller
@@ -19,7 +21,7 @@ public class ProductController {
     }
 
     @GetMapping("/create")
-    public String createProduct(Model model){
+    public String createProduct(Model model) {
 
         model.addAttribute("product", new Product());
 
@@ -27,15 +29,19 @@ public class ProductController {
     }
 
     @PostMapping("/create")
-    public String productCreateConfirmation(@ModelAttribute("product") Product product){
+    public String productCreateConfirmation(@Valid @ModelAttribute("product")Product product, BindingResult bindingResult, Model model) {
 
+        if (bindingResult.hasErrors()) {
+
+            return "/product/create-product";
+        }
         productService.productCreate(product);
 
         return "redirect:/product/list";
     }
 
     @GetMapping("/update/{id}")
-    public String updateProduct(Model model, @PathVariable("id") String id){
+    public String updateProduct(Model model, @PathVariable("id") String id) {
 
         model.addAttribute("product", productService.findProductById(UUID.fromString(id)));
 
@@ -43,15 +49,19 @@ public class ProductController {
     }
 
     @PostMapping("/update/{id}")
-    public String updateProduct(@ModelAttribute("product") Product product){
+    public String updateProduct(@Valid @ModelAttribute("product")Product product, BindingResult bindingResult, Model model) {
 
+        if (bindingResult.hasErrors()) {
+
+            return "/product/update-product";
+        }
         productService.productUpdate(product);
 
         return "redirect:/product/list";
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteProduct(@PathVariable String id){
+    public String deleteProduct(@PathVariable String id) {
 
         productService.productDelete(UUID.fromString(id));
 
@@ -59,7 +69,7 @@ public class ProductController {
     }
 
     @GetMapping("/list")
-    public String listProducts(Model model){
+    public String listProducts(Model model) {
 
         model.addAttribute("productList", productService.listProduct());
 

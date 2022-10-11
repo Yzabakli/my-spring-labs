@@ -22,29 +22,57 @@
             <label>Name
               <input type="text" placeholder="name" th:field="*{name}">
             </label>
+            <div class="invalid-feedback"
+                 th:if="${#fields.hasErrors('name')}">
+              <ul>
+                <li th:each="err : ${#fields.errors('name')}"
+                    th:text="${err}"></li>
+              </ul>
+            </div>
           </div>
 
           <div class="form-group blu-margin" th:class="'form-group'">
             <label >Price
               <input type="number"  placeholder="price" th:field="*{price}">
             </label>
+            <div class="invalid-feedback"
+                 th:if="${#fields.hasErrors('price')}">
+              <ul>
+                <li th:each="err : ${#fields.errors('price')}"
+                    th:text="${err}"></li>
+              </ul>
+            </div>
           </div>
 
           <div class="form-group blu-margin" th:class="'form-group'">
             <label >RemainingQuantity
               <input type="number" placeholder="remainingQuantity" th:field="*{remainingQuantity}">
             </label>
+            <div class="invalid-feedback"
+                 th:if="${#fields.hasErrors('remainingQuantity')}">
+              <ul>
+                <li th:each="err : ${#fields.errors('remainingQuantity')}"
+                    th:text="${err}"></li>
+              </ul>
+            </div>
           </div>
 
           <div class="form-group blu-margin" th:class="'form-group'">
             <label >Image
               <input type="url" placeholder="image" th:field="*{image}">
             </label>
+            <div class="invalid-feedback"
+                 th:if="${#fields.hasErrors('image')}">
+              <ul>
+                <li th:each="err : ${#fields.errors('image')}"
+                    th:text="${err}"></li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-6 mt-5">
-            <input type="submit" class="btn btn-primary" value="Update Product">
+            <input type="submit" class="btn btn-success" value="Update Product">
           </div>
         </div>
       </form>
