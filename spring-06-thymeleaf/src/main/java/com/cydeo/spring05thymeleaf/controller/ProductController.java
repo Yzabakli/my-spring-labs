@@ -29,11 +29,11 @@ public class ProductController {
     }
 
     @PostMapping("/create")
-    public String productCreateConfirmation(@Valid @ModelAttribute("product")Product product, BindingResult bindingResult, Model model) {
+    public String productCreateConfirmation(@Valid Product product, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
 
-            return "/product/create-product";
+            return "product/create-product";
         }
         productService.productCreate(product);
 
@@ -49,11 +49,11 @@ public class ProductController {
     }
 
     @PostMapping("/update/{id}")
-    public String updateProduct(@Valid @ModelAttribute("product")Product product, BindingResult bindingResult, Model model) {
+    public String updateProduct(@Valid Product product, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
 
-            return "/product/update-product";
+            return "product/update-product";
         }
         productService.productUpdate(product);
 

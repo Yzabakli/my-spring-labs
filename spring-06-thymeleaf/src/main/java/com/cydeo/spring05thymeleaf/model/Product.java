@@ -1,7 +1,6 @@
 package com.cydeo.spring05thymeleaf.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -9,8 +8,9 @@ import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
 import java.util.UUID;
 
-@Getter
-@Setter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Product {
 
     private UUID id;
