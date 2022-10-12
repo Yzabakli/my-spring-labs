@@ -32,7 +32,7 @@ public class CartController {
 
         cartService.deleteFromCart(UUID.fromString(id));
 
-        return "redirect:/cart/show-cart";
+        return "redirect:/cart";
     }
 
     @RequestMapping("/cart-item/add/{id}")

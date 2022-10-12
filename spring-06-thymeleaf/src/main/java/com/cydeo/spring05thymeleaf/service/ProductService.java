@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.UUID;
 
 public interface ProductService {
-    boolean productCreate(Product product);
+    void productCreate(Product product);
 
     void productUpdate(Product product);
 

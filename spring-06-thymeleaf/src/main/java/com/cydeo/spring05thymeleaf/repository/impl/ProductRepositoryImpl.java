@@ -13,10 +13,9 @@ public class ProductRepositoryImpl implements ProductRepository {
     public static List<Product> PRODUCT_LIST = new ArrayList<>();
 
     @Override
-    public boolean save(Product product) {
+    public void save(Product product) {
         product.setId(UUID.randomUUID());
         PRODUCT_LIST.add(product);
-        return PRODUCT_LIST.contains(product);
     }
 
     @Override

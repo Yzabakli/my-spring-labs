@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
@@ -9,7 +9,6 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet">
     <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
           integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" rel="stylesheet">
-    <link href="../css/shards.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="container my-5">
@@ -32,7 +31,7 @@
                     </thead>
                     <tbody>
                     <tr th:each="eachProduct : ${productList}">
-                        <td><img height="100" th:src="${eachProduct.image}" width="200"></td>
+                        <td><img alt="" height="80" src="" th:src="${eachProduct.image}" width="160"></td>
                         <td th:text="${eachProduct.getName()}"></td>
                         <td th:text="${eachProduct.getPrice()}"></td>
                         <td th:text="${eachProduct.getRemainingQuantity()}"></td>

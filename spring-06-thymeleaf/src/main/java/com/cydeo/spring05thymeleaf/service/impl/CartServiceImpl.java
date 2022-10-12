@@ -22,7 +22,7 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public Cart addToCart(UUID productId, Integer quantity) {
+    public void addToCart(UUID productId, Integer quantity) {
 
         Product product = productService.findProductById(productId);
 
@@ -41,7 +41,7 @@ public class CartServiceImpl implements CartService {
 
             CART.setCartTotalAmount(CART.getCartTotalAmount().add(product.getPrice()));
 
-            return CART;
+            return;
         }
 
         CartItem cartItem = new CartItem();
@@ -54,11 +54,10 @@ public class CartServiceImpl implements CartService {
 
         CART.getCartItemList().add(cartItem);
 
-        return CART;
     }
 
     @Override
-    public boolean deleteFromCart(UUID productId) {
+    public void deleteFromCart(UUID productId) {
 
         CartItem cartItem = CART.getCartItemList()
                 .stream()
@@ -72,6 +71,6 @@ public class CartServiceImpl implements CartService {
 
         product.setRemainingQuantity(product.getRemainingQuantity() + cartItem.getQuantity());
 
-        return CART.getCartItemList().remove(cartItem);
+        CART.getCartItemList().remove(cartItem);
     }
 }

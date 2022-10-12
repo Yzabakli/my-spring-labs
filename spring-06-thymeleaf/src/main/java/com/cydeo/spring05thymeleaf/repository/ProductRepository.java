@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.UUID;
 
 public interface ProductRepository {
-    boolean save(Product product);
+    void save(Product product);
 
     void update(Product product);
 

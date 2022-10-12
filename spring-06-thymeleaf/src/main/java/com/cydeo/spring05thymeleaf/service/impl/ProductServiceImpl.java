@@ -18,11 +18,11 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public boolean productCreate(Product product) {
+    public void productCreate(Product product) {
 
         productRepository.save(product);
 
-        return productRepository.findAll().contains(product);
+        productRepository.findAll();
     }
 
     @Override
