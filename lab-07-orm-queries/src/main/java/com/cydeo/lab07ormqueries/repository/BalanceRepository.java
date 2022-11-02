@@ -8,10 +8,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.List;
 
 @Repository
-public interface BalanceRepository extends JpaRepository<Balance, Long> {
+public interface BalanceRepository extends JpaRepository<Balance, BigInteger> {
 
     //Write a derived query to check balance exists for specific customer
     boolean existsByCustomer(Customer customer);
