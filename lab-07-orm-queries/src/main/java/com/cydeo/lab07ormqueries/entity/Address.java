@@ -1,7 +1,10 @@
-package com.cydeo.lab06orm.entity;
+package com.cydeo.lab07ormqueries.entity;
+
+import lombok.ToString;
 
 import javax.persistence.*;
 
+@ToString
 @Entity
 public class Address {
     @Id

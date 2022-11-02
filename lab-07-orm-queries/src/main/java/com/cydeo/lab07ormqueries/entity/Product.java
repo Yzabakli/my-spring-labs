@@ -1,13 +1,13 @@
-package com.cydeo.lab06orm.entity;
+package com.cydeo.lab07ormqueries.entity;
+
+import lombok.ToString;
 
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Set;
 
+@ToString
 @Entity
 public class Product extends BaseEntity {
 
@@ -16,7 +16,7 @@ public class Product extends BaseEntity {
     private Integer quantity;
     private Integer remainingQuantity;
 
+    @ToString.Exclude
     @ManyToMany(mappedBy = "products")
-
-    private List<Category> categories;
+    private List<Category> categories = new java.util.ArrayList<>();
 }

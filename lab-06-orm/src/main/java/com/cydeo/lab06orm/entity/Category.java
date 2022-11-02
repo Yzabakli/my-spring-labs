@@ -4,10 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import java.util.Set;
+import java.util.List;
 
 @Entity
-public class Category extends BaseEntity{
+public class Category extends BaseEntity {
 
     private String name;
 
@@ -15,5 +15,5 @@ public class Category extends BaseEntity{
     @JoinTable(name = "product_category_rel",
             joinColumns = @JoinColumn(name = "p_id"),
             inverseJoinColumns = @JoinColumn(name = "c_id"))
-    private Set<Product> products;
+    private List<Product> products;
 }
